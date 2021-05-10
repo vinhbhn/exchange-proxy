@@ -18,6 +18,8 @@
  *
  */
 
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+
 module.exports = {
     /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -43,6 +45,24 @@ module.exports = {
             gasPrice: 10000000000, // 10 gwei
             gas: 6900000,
             from: process.env.ETH_FROM,
+        },
+        mumbai: {
+            // eslint-disable-next-line max-len
+            provider: () => new HDWalletProvider({ privateKeys: ['4c0acdd4dd280274e048a8a4140e103c9d555fba5fc30a79f7ffa3e61b293421'], providerOrUrl: 'https://rpc-mumbai.maticvigil.com' }),
+            network_id: 80001,
+            gasPrice: 3000000000, // 3 gwei
+            confirmations: 2,
+            timeoutBlocks: 200,
+            skipDryRun: true,
+        },
+        polygon: {
+            // eslint-disable-next-line max-len
+            provider: () => new HDWalletProvider({ privateKeys: ['4c0acdd4dd280274e048a8a4140e103c9d555fba5fc30a79f7ffa3e61b293421'], providerOrUrl: 'https://rpc-mainnet.maticvigil.com' }),
+            network_id: 137,
+            gasPrice: 3000000000,
+            confirmations: 2,
+            timeoutBlocks: 200,
+            skipDryRun: true,
         },
     },
 
