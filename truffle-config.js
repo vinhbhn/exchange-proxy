@@ -19,7 +19,7 @@ module.exports = {
         },
         mumbai: {
             // eslint-disable-next-line max-len
-            provider: () => new HDWalletProvider(process.env.MNEMONIC, 'https://rpc-mumbai.maticvigil.com'),
+            provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://polygon-mumbai.infura.io/v3/${INFURA_KEY}`),
             network_id: 80001,
             gasPrice: 3000000000, // 3 gwei
             confirmations: 2,
@@ -28,7 +28,7 @@ module.exports = {
         },
         polygon: {
             // eslint-disable-next-line max-len
-            provider: () => new HDWalletProvider(process.env.MNEMONIC, 'https://rpc-mainnet.maticvigil.com'),
+            provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`),
             network_id: 137,
             gasPrice: 3000000000,
             confirmations: 2,
